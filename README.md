@@ -12,6 +12,8 @@ git clone https://github.com/mangirdaz/nginx-minimal.git
 cd nginx-minimal
 #create empty BC
 oc new-build --binary --name nginx
+#build
+oc start-build nginx --from-file=. --follow
 #deploy
 oc new-app nginx --image-stream=nginx
 #expose service
